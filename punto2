@@ -1,3 +1,39 @@
+
+public class punto1 {
+    protected String SubSecMax = "";
+    protected String SubSecCorta = "";
+
+    public String CompararCadenas(int n, String Sec1, String Sec2)// n es el punto donde se empezará a comparar las
+                                                                  // cadenas
+    {
+        if (n >= Sec1.length() || n >= Sec2.length()) {// Condicion de parada
+            System.out.println(SubSecMax);
+            return SubSecMax;
+        } else if (Sec1.charAt(n) == Sec2.charAt(n)) {
+            SubSecCorta = SubSecCorta + Sec1.charAt(n);
+            if (SubSecCorta.length() >= SubSecMax.length()) {
+                SubSecMax = SubSecCorta;
+                return CompararCadenas(n + 1, Sec1, Sec2);
+            }
+
+        } else if (Sec1.charAt(n) != Sec2.charAt(n)) {
+            SubSecCorta = "";
+            return CompararCadenas(n + 1, Sec1, Sec2);
+        }
+
+        return CompararCadenas(n + 1, Sec1, Sec2);
+
+    }
+
+}
+
+
+
+
+
+
+
+
 public class punto2 {
     protected int base = 2;
     protected int AreaPequeña = 2;

@@ -13,6 +13,7 @@ public class punto1.1 {
             SubSecCorta = SubSecCorta + Sec1.charAt(n);
             if (SubSecCorta.length() >= SubSecMax.length()) {
                 SubSecMax = SubSecCorta;
+                if(SubSecMax.length()-1>(Sec1.length()-1)-n||SubSecMax.length()-1>(Sec2.length()-1)-n)return SubSecMax;
                 return CompararCadenas(n + 1, Sec1, Sec2);
             }
 

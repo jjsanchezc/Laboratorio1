@@ -20,14 +20,11 @@ public class subSecuencia {
 
 
 //punto 1.2
-    public static int Calcular(int altura) {
-        return Calcular1(altura);
-    }
-
-    public static int Calcular1(int altura) {
+public class subSecuencia {
+public static int Calcular(int altura) {
         if (altura <= 2)
             return altura;
-        return Calcular(altura) + Calcular(altura);
-
+        return 1+ Calcular(altura-1);
     }
+}
 }

@@ -1,41 +1,16 @@
+public class subSecuencia {
 
-public class punto1 {
-    protected String SubSecMax = "";// 01
-    protected String SubSecCorta = "";// 01
+    // Este metodo sirve para ingresar los datos para ver cual es la subsecuencia
+    // mas larga
+    public static int SubSec1(String Sec1, String Sec2) {
+        return SubSec(Sec1.length(), Sec2.length(), Sec1, Sec2);
+    }
 
-    public int CompararCadenas(int n, String Sec1, String Sec2)// n es el punto donde se empezará a comparar las
-                                                               // cadenas
-    {
-        long startTime = System.nanoTime();
-
-        if (n >= Sec1.length() || n >= Sec2.length()) {// Condicion de parada
-            long endTime = System.nanoTime();
-            System.out.println(endTime - startTime);
-            return SubSecMax.length();
-
-        } else if (Sec1.charAt(n) == Sec2.charAt(n)) {
-            SubSecCorta = SubSecCorta + Sec1.charAt(n);
-            if (SubSecCorta.length() >= SubSecMax.length()) {
-                SubSecMax = SubSecCorta;
-                if (SubSecMax.length() - 1 > (Sec1.length() - 1) - n
-                        || SubSecMax.length() - 1 > (Sec2.length() - 1) - n)
-                    return SubSecMax.length();
-                return CompararCadenas(n + 1, Sec1, Sec2);
-            }
-
-        } else if (Sec1.charAt(n) != Sec2.charAt(n)) {
-            SubSecCorta = "";
-            if (SubSecMax.length() - 1 > (Sec1.length() - 1) - n || SubSecMax.length() - 1 > (Sec2.length() - 1) - n)
-                return SubSecMax.length();
-            return CompararCadenas(n + 1, Sec1, Sec2);
-        }
-
-        return CompararCadenas(n + 1, Sec1, Sec2);
-
+    public static int SubSec(int a, int b, String Sec1, String Sec2) {
+        return Math.max(SubSec(a, b - 1, Sec1, Sec2), SubSec(a - 1, b, Sec1, Sec2));
     }
 
 }
-
 
 
 

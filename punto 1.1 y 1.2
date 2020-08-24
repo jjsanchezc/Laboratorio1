@@ -1,3 +1,5 @@
+
+//punto 1.1
 public class subSecuencia {
 
     // Este metodo sirve para ingresar los datos para ver cual es la subsecuencia
@@ -17,28 +19,15 @@ public class subSecuencia {
 
 
 
+//punto 1.2
+    public static int Calcular(int altura) {
+        return Calcular1(altura);
+    }
 
+    public static int Calcular1(int altura) {
+        if (altura <= 2)
+            return altura;
+        return Calcular(altura) + Calcular(altura);
 
-public class punto1.2 {
-    protected int base = 2;
-    protected int AreaPequeña = 2;
-    protected int AreaGrande;
-
-    public int calcular(int c, int altura) {// c es el numero de veces que el rectangulo pequeño cabe en el rectangulo
-                                            // grande(debe de empezar en 1)
-                                            
-                                            // altura es la altura que le da el usuario al momento de escribir en el
-                                            // paremetro
-        AreaGrande = base * altura;
-        AreaPequeña = AreaPequeña * c;
-        if (AreaGrande == AreaPequeña || AreaGrande % AreaPequeña == 1) {
-            System.out.println("en el rectangulo, base: " + base + " y altura: " + altura + " caben " + c
-                    + " rectangulos pequeños ");
-            return c;
-        } else if (AreaGrande < AreaPequeña) {
-            System.out.println("no cabe ningun rectangulo");
-            return c - 1;
-        }
-        return calcular(c + 1, altura);
     }
 }

@@ -9,9 +9,12 @@ public class subSecuencia {
     }
 
     public static int SubSec(int a, int b, String Sec1, String Sec2) {
+        if (a == 0 || b == 0)
+            return 0;
+        if (Sec1.charAt(a - 1) == Sec2.charAt(b - 1))
+            return 1 + SubSec(a - 1, b - 1, Sec1, Sec2);
         return Math.max(SubSec(a, b - 1, Sec1, Sec2), SubSec(a - 1, b, Sec1, Sec2));
     }
-
 }
 
 
